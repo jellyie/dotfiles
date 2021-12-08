@@ -1,11 +1,12 @@
 return require('packer').startup({function(use)
-  -- Packer can manage itself as an optional plugin
-  use {'wbthomason/packer.nvim', opt = true}
+   
+    -- Packer can manage itself as an optional plugin
+    use {'wbthomason/packer.nvim', opt = true}
 
-  -- Color scheme
-  use { 'edeneast/nightfox.nvim' }
+    -- Color scheme
+    use { 'EdenEast/nightfox.nvim' }
 
--- Dev icons
+    -- Dev icons
     use { 'kyazdani42/nvim-web-devicons' }
 
     -- Status line
@@ -18,15 +19,14 @@ return require('packer').startup({function(use)
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
-
-    use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
     
     -- Neorg
     use { 
     'nvim-neorg/neorg',
+    opt = false,
+    requires = {'nvim-lua/plenary.nvim'},
     after = 'nvim-treesitter',
-    requires = 'nvim-lua/plenary.nvim',
-    opt = false }
+     }
 
     -- LSP and completion
     use { 'neovim/nvim-lspconfig' }
@@ -37,6 +37,12 @@ return require('packer').startup({function(use)
     -- Adds vscode-like pictograms to neovim built-in lsp
     use { 'onsails/lspkind-nvim' }
     use { 'glepnir/lspsaga.nvim' }
+    
+    -- Dashboard
+    use { 'glepnir/dashboard-nvim' }
+
+    -- Shows available code actions
+    use {'kosayoda/nvim-lightbulb'}
 
     -- Snippets
     use { 'L3MON4D3/LuaSnip' }
@@ -53,7 +59,10 @@ return require('packer').startup({function(use)
         run = ':TSUpdate'
     }  
 
-
+    -- Flutter 
+    use { 'akinsho/flutter-tools.nvim',
+    requires = {'nvim-lua/plenary.nvim'}, 
+    }
     
     -- Lua development
     use { 'tjdevries/nlua.nvim' }

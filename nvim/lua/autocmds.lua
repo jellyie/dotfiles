@@ -21,8 +21,9 @@ local autocmds = {
     };
     project_drawer = {
         -- Launch Netrw right after entering Nvim
-        {"VimEnter", "*", ":Explore" } 
+       -- {"VimEnter", "*", ":Explore" } 
     }; 
 }
 
 nvim_create_augroups(autocmds)
+

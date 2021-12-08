@@ -32,3 +32,11 @@ utils.map('n', 'nnoremap dw', 'vb"_d')
 -- Delete without yank
 utils.map('n', '<leader>d', '"_d')
 utils.map('n', 'x', '"_x')
+
+-- Telescope keybindings 
+utils.map('n', ';f', '<cmd>Telescope find_files<cr>')
+utils.map('n', ';r', '<cmd>Telescope live_grep<cr>')
+utils.map('n', ';b', '<cmd>Telescope file_browser<cr>')
+utils.map('n', '\\', '<cmd>Telescope buffers<cr>')
+utils.map('n', ';;', '<cmd>Telescope help_tags<cr>')
+

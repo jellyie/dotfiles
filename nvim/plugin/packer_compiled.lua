@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -83,6 +83,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/irene/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["dashboard-nvim"] = {
+    loaded = true,
+    path = "/Users/irene/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
+    url = "https://github.com/glepnir/dashboard-nvim"
   },
   ["flutter-tools.nvim"] = {
     loaded = true,
@@ -110,6 +115,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   neorg = {
+    load_after = {},
     loaded = true,
     needs_bufread = true,
     path = "/Users/irene/.local/share/nvim/site/pack/packer/opt/neorg",
@@ -118,7 +124,7 @@ _G.packer_plugins = {
   ["nightfox.nvim"] = {
     loaded = true,
     path = "/Users/irene/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/edeneast/nightfox.nvim"
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nlua.nvim"] = {
     loaded = true,
@@ -134,6 +140,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/irene/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/irene/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -179,6 +190,11 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd neorg ]]
+time([[Sequenced loading]], false)
 if should_profile then save_profiles() end
 
 end)
