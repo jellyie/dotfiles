@@ -80,6 +80,18 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+
+nvim_lsp.denols.setup {
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("deno.json"),
+  init_options = {
+    lint = true,
+  },
+}
+
 nvim_lsp.flow.setup {
   on_attach = on_attach,
   capabilities = capabilities
@@ -88,6 +100,7 @@ nvim_lsp.flow.setup {
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
   capabilities = capabilities
 }
 

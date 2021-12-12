@@ -10,10 +10,10 @@ saga.init_lsp_saga {
 }
 
 -- show hover doc
-utils.map('n', 'K', [[<cmd>lua require('saga.hover').render_hover_doc()<CR>]])
+utils.map('n', 'K', [[<cmd>lua require(saga.hover).render_hover_doc()<CR>]])
 
 -- scroll up/down hover doc or scroll in definition preview
-utils.map('n', '<C-j>', [[<cmd>lua require('saga.action').smart_scroll_with_saga(1)<CR>]])
-utils.map('n', '<C-k>', [[<cmd>lua require('saga.action').smart_scroll_with_saga(-1)<CR>]])
+utils.map('n', '<C-j>', [[<cmd>lua require(saga.action).smart_scroll_with_saga(1)<CR>]])
+utils.map('n', '<C-k>', [[<cmd>lua require(saga.action).smart_scroll_with_saga(-1)<CR>]])
 utils.map('n', 'gh', [[:Lspsaga lsp_finder<CR>]])
 utils.map('n', 'gp', [[:Lspsaga preview_definition<CR>]])
