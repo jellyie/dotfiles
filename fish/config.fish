@@ -53,3 +53,4 @@ alias ll "exa -l -g --icons --sort=ext"
 alias lla "ll -a"
 alias g git
 command -qv nvim && alias vim nvim
+

@@ -16,8 +16,8 @@ utils.map('n', 'sk', '<C-w>k')
 utils.map('n', 'sl', '<C-w>l')
 
 -- Resize windows
-utils.map('n', '-', '<C-w><')
-utils.map('n', '=', '<C-w>>')
+utils.map('n', '=', '<C-w><')
+utils.map('n', '-', '<C-w>>')
 utils.map('n', '<C-w><up>', '<C-w>+')
 utils.map('n', '<C-w><down>', '<C-w>-')
 
@@ -27,16 +27,22 @@ utils.map('n', '<S-Tab>', ':tabprev<Return>')
 utils.map('n', '<Tab>', ':tabnext<Return>')
 
 -- Delete a word backwards
-utils.map('n', 'nnoremap dw', 'vb"_d')
+utils.map('n', 'dw', 'vb"_d')
 
 -- Delete without yank
 utils.map('n', '<leader>d', '"_d')
 utils.map('n', 'x', '"_x')
 
 -- Telescope keybindings 
-utils.map('n', ';f', '<cmd>Telescope find_files<cr>')
-utils.map('n', ';r', '<cmd>Telescope live_grep<cr>')
+utils.map('n', ';f', [[<cmd>lua require'../config/telescope'.project_files()<cr>]])
+-- utils.map('n', ';f', '<cmd>Telescope git_files<cr>')
+-- utils.map('n', 'ff', '<cmd>Telescope find_files<cr>')
+utils.map('n', ';g', '<cmd>Telescope live_grep<cr>')
 utils.map('n', 'fj', '<cmd>Telescope file_browser<cr>')
 utils.map('n', '\\', '<cmd>Telescope buffers<cr>')
 utils.map('n', ';;', '<cmd>Telescope help_tags<cr>')
-
+utils.map('n', 'ca', '<cmd>Telescope lsp_code_actions<cr>')
+utils.map('n', 'gD', '<cmd>Telescope lsp_document_diagnostics<cr>')
+utils.map('n', 'gr', '<cmd>Telescope lsp_references<cr>')
+utils.map('n', 'K', '<cmd>Telescope lsp_definitions<cr>')
+utils.map('n', 'gi', '<cmd>Telescope lsp_implementations<cr>')
