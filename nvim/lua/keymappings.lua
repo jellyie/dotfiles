@@ -18,8 +18,8 @@ utils.map('n', 'sl', '<C-w>l')
 -- Resize windows
 utils.map('n', '=', '<C-w><')
 utils.map('n', '-', '<C-w>>')
-utils.map('n', '<C-w><up>', '<C-w>+')
-utils.map('n', '<C-w><down>', '<C-w>-')
+utils.map('n', ';k', '<C-w>+')
+utils.map('n', ';j', '<C-w>-')
 
 -- Tabs
 utils.map('n', 'te', ':tabedit')
@@ -42,7 +42,10 @@ utils.map('n', 'fj', '<cmd>Telescope file_browser<cr>')
 utils.map('n', '\\', '<cmd>Telescope buffers<cr>')
 utils.map('n', ';;', '<cmd>Telescope help_tags<cr>')
 utils.map('n', 'ca', '<cmd>Telescope lsp_code_actions<cr>')
-utils.map('n', 'gD', '<cmd>Telescope lsp_document_diagnostics<cr>')
+utils.map('n', 'gD', '<cmd>Telescope diagnostics<cr>')
 utils.map('n', 'gr', '<cmd>Telescope lsp_references<cr>')
 utils.map('n', 'K', '<cmd>Telescope lsp_definitions<cr>')
 utils.map('n', 'gi', '<cmd>Telescope lsp_implementations<cr>')
+
+-- Lightspeed keybindings 
+vim.api.nvim_set_keymap('n', '<leader>s', '<Plug>Lightspeed_s', {})

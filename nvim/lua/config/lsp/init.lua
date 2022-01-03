@@ -27,10 +27,10 @@ local on_attach = function(client, bufnr)
 --   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 --   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
    buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-   --buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
---   buf_set_keymap('n', '<S-C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+   buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 --   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
---   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+--   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
      -- formatting
   if client.name == 'tsserver' then
@@ -81,28 +81,28 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
 )
 
 vim.g.markdown_fenced_languages = {
-  "ts=typescript"
+  'ts=typescript'
 }
 
-nvim_lsp.denols.setup {
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("deno.json"),
-  init_options = {
-    lint = true,
-    importMap = "./import_map.json",
-  },
-}
+--nvim_lsp.denols.setup {
+--  on_attach = on_attach,
+--  root_dir = nvim_lsp.util.root_pattern('deno.json'),
+--  init_options = {
+--    lint = true,
+--    importMap = './import_map.json',
+--  },
+--}
 
 nvim_lsp.flow.setup {
   on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  root_dir = nvim_lsp.util.root_pattern('package.json'),
   capabilities = capabilities
 }
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+  root_dir = nvim_lsp.util.root_pattern('package.json'),
   capabilities = capabilities
 }
 
@@ -167,7 +167,7 @@ nvim_lsp.diagnosticls.setup {
 }
 
 -- icon
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     -- This sets the spacing and the prefix, obviously.

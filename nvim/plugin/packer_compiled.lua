@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/irene/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
   },
+  ["lightspeed.nvim"] = {
+    loaded = true,
+    path = "/Users/irene/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
+    url = "https://github.com/ggandor/lightspeed.nvim"
+  },
   ["lsp-colors.nvim"] = {
     loaded = true,
     path = "/Users/irene/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
@@ -186,6 +191,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/irene/.local/share/nvim/site/pack/packer/start/vim-dispatch",
     url = "https://github.com/tpope/vim-dispatch"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/irene/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   }
 }
 

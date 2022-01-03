@@ -26,6 +26,10 @@ telescope.setup{
       hidden = true,
       theme = 'cursor'
     },
+    diagnostics = {
+      hidden = true,
+      theme = 'dropdown'
+    },
     lsp_document_diagnostics = {
       hidden = true,
       bufnr = 0,
@@ -55,7 +59,7 @@ local M = {}
 M.project_files = function()
   local opts = {
     hidden = true,
-    file_ignore_patterns = {'.git/.*'}
+    file_ignore_patterns = {'.git/.*', '.png/.*'}
   } -- define here if you want to define something
   local ok = pcall(require"telescope.builtin".git_files, opts)
   if not ok then require"telescope.builtin".find_files(opts) end

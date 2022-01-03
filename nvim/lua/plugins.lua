@@ -20,6 +20,9 @@ return require('packer').startup({function(use)
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
     
+    -- Lightspeed
+    use { 'ggandor/lightspeed.nvim'} 
+
     -- Neorg
     use { 
     'nvim-neorg/neorg',
@@ -70,4 +73,8 @@ return require('packer').startup({function(use)
 
     -- Vim dispatch
     use { 'tpope/vim-dispatch' }
+
+    -- Vim repeated 
+    use { 'tpope/vim-repeat' }
+
 end})
