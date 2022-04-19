@@ -3,6 +3,10 @@ local utils = require('utils')
 local cmd = vim.cmd
 local indent = 2
 
+-- Load colorscheme
+cmd 'colorscheme nightfox'
+utils.opt('o', 'termguicolors', true)
+
 cmd 'syntax enable'
 cmd 'filetype plugin indent on'
 utils.opt('b', 'expandtab', true)

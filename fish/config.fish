@@ -53,4 +53,11 @@ alias ll "exa -l -g --icons --sort=ext"
 alias lla "ll -a"
 alias g git
 command -qv nvim && alias vim nvim
+alias ac arduino-cli
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /Users/irene/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
 

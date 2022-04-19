@@ -61,10 +61,19 @@ yabai -m rule --add app='^Finder$' manage=off
 yabai -m rule --add app='^Messages$' manage=off
 
 # float preview windows
-yabai -m rule --add app='^Preview$' manage=off
+# yabai -m rule --add app='^Preview$' manage=off
 
 # float Quicktime player
 yabai -m rule --add app='^QuickTime Player$' manage=off
 
 # float Things windows
 yabai -m rule --add app='Things$' manage=off
+
+# float Planny windows
+yabai -m rule --add app='^Planny$' manage=off
+
+# float Calendar windows
+yabai -m rule --add app='^Calendar$' manage=off
+
+# float Slack windows
+yabai -m rule --add app='^Slack$' manage=off
